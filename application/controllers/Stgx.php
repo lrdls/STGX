@@ -26,9 +26,9 @@ class Stgx extends CI_Controller {
 	
 	public function index() {
 		
-        $this->load->view('header');
+/*         $this->load->view('header_stgx');
         $this->load->view('stgx/stgx');
-        $this->load->view('footer');
+        $this->load->view('footer'); */
 		
 	}
 	
