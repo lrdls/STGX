@@ -36,7 +36,8 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.png
 *.gif
 *.psd
-*.sql
+.sql
+#!application/assets/sql/login.sql
 *.txt
 test*
 jquery*
