@@ -22,7 +22,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 .idea/*
 *.ok
 *.md
-*.rst
+.rst
 *.htaccess
 /cache/
 /tmp/
