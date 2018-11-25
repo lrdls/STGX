@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * 
  * @extends CI_Controller
  */
-class Home extends CI_Controller {
+class Cytoscape extends CI_Controller {
 
 	/**
 	 * __construct function.
@@ -26,14 +26,9 @@ class Home extends CI_Controller {
 	
 	public function index() {
 		
-        $this->load->view('header');
-        $this->load->view('home');
-		$this->load->view('footer');
-		
-/* 		$this->load->view('header_stgx');
-        $this->load->view('stgx/stgx');
-        $this->load->view('footer'); */
+        $this->load->view('stgx/cytoscape/cytoscape');
 		
 	}
+	
 	
 }

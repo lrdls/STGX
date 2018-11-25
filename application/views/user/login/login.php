@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<div class="container">
+<div class="container container-login">
 	<div class="row">
 		<?php if (validation_errors()) : ?>
 			<div class="col-md-12">

@@ -1,0 +1,41 @@
+:root {
+
+    --grey-color1: #080808;
+    --grey-color2: #404040;
+    --grey-color3: #808080;
+
+    --blueViolet-color1: RoyalBlue;
+
+    --main-bg-color: grey;
+    --login-bg-color: #336699;
+    --height-navbar: 50px;
+}
+
+body, html, .footer-home {
+    font-family: Arial, Helvetica, sans-serif !important;
+    padding: o;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+
+
+.header-home{
+    font-family: Arial, Helvetica, sans-serif !important;
+    border-radius: 0;
+}
+
+.footer-home{
+    position:absolute;
+    bottom:0px;
+    background-color: var(--grey-color1);
+    width:100%;
+    padding-left: 4vh;
+}
+
+.container-login {
+    background-color: var(--login-bg-color);
+    border-radius: 4px;
+
+}
