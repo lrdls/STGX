@@ -56,7 +56,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['home'] = 'home';
-$route['storygraph'] = 'stgx';
+$route['stgx'] = 'stgx';
 $route['register'] = 'user/register';
 $route['login'] = 'user/login';
 $route['logout'] = 'user/logout';

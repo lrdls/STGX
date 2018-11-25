@@ -133,12 +133,18 @@ class User extends CI_Controller {
 				$_SESSION['is_admin']     = (bool)$user->is_admin;
 				
 				// user login ok
-				// $this->load->view('header_stgx');
-				$this->load->view('header_stgx');
-				// $this->load->view('user/login/login_success', $data);
-				// $this->load->view('stgx/stgx', $data);
-				// $this->load->view('stgx/cytoscape/cytoscape', $data);
-				$this->load->view('footer');
+				// $this->load->view('header');
+				//$this->load->view('header_stgx');
+						// $this->load->view('user/login/login_success', $data);
+						// $this->load->view('stgx/stgx', $data);
+						// $this->load->view('stgx/cytoscape/cytoscape', $data);
+				//$this->load->view('footer');
+
+				$this->load->view('stgx/cytoscape/cytoscape', $data);
+
+/* 				header('Location: cytoscape');
+				exit(); */
+
 				
 			} else {
 				

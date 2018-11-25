@@ -1,4 +1,12 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+<?php if (!isset($_SESSION['username'])){
+  header('Location: logout');
+  exit();
+} 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,54 +19,13 @@
 	<meta name="author" content="">
 
 	<!-- css -->
-<!-- 	<link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet"> -->
+
 <link href="<?= base_url('assets/bootstrap-3.3.7/css/bootstrap.min.css') ?>" rel="stylesheet">
 <link href="<?= base_url('assets/bootstrap-3.3.7/fonts/font-awesome.min.css') ?>" rel="stylesheet">
 
-
-  <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+<link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
   
-<!--   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
-
-  <!-- <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet"> -->
-
- <!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
- -->
-
-
-<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  -->
-  <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script> 
-<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-
-
-
-
-
-
-
-
-
-
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"> -->
-
-<!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script> 
 
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -67,11 +34,6 @@
   
 <style>
 
-
-
-:root {
-
-}
 
 
 /* some resets I like */
@@ -174,22 +136,7 @@ ul{
 	margin:0;
 }
 
-	</style>
 
-
-
-
-
-</head>
-<body style="background-color:blue;">
-
-
-
-
-
-
-
-<style>
 	.flex-container {
 
 font-family: Arial, Helvetica, sans-serif !important;
@@ -226,9 +173,7 @@ font-family: Arial, Helvetica, sans-serif !important;
     }
   }
 }
-</style>
 
-<style>
 
 
 #menu {
@@ -321,7 +266,61 @@ display: block;
 z-index: 90;
 }
 
+
+.fa-television{
+    font-family: 'FontAwesome';
+}
+
+.fa-television:before {
+    content: "\f26c";
+}
+
+  .search-box{
+  height:49px;
+  width:300px;
+  margin:0;padding:0;
+background-color: grey;
+    -webkit-box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
+    color: white;
+  }
+
+
+.search-box > .fa-searchX {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  font-size: 25px;
+  color: white;
+}
+
+/* Bootstrap 3 text input with search icon */
+
+.has-search .form-control-feedback {
+    right: initial;
+    left: 0;
+	color: white;
+	top: 18px;
+
+}
+
+.has-search .form-control {
+    padding-right: 12px;
+	padding-left: 34px;
+	
+}
+
 </style>
+
+
+</head>
+<body style="background-color:blue;">
+
+
+
+
+
 
 
 
@@ -365,7 +364,7 @@ z-index: 90;
 				<ul class="sub-menu">
 					<li><a href="">Help</a></li>
 					<li><a href="">Parametres</a></li>
-					<li><a href="">Logout</a></li>
+					<li><a href="<?= base_url('logout') ?>">Logout</a></li>
 				</ul>
 			</li>
 
@@ -410,15 +409,6 @@ z-index: 90;
  </div> -->
 
 
-<style>
-.fa-television{
-    font-family: 'FontAwesome';
-}
-
-.fa-television:before {
-    content: "\f26c";
-}
-</style>
 
 
 	<div id="menu" style="padding-right:100px;">
@@ -484,44 +474,6 @@ z-index: 90;
 
 
 
-  <style>
-  .search-box{
-  height:49px;
-  width:300px;
-  margin:0;padding:0;
-background-color: grey;
-    -webkit-box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
-    box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
-    color: white;
-  }
-
-
-.search-box > .fa-searchX {
-  position: absolute;
-  top: 9px;
-  left: 7px;
-  font-size: 25px;
-  color: white;
-}
-
-/* Bootstrap 3 text input with search icon */
-
-.has-search .form-control-feedback {
-    right: initial;
-    left: 0;
-	color: white;
-	top: 18px;
-
-}
-
-.has-search .form-control {
-    padding-right: 12px;
-	padding-left: 34px;
-	
-}
-
-</style>
 
 <!--   <div class="flex-item  shrink-3"   style="width:300px;margin-left:100px;"><p>
 
@@ -544,12 +496,6 @@ background-color: grey;
 
 
 </div> 
-
-
-
-
-
-
 
 
 
