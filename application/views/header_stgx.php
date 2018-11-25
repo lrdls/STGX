@@ -68,7 +68,7 @@ overflow: none !important;
 		</nav><!-- .navbar -->
 	</header><!-- #site-header -->
 
-	<main id="site-contentX" role="main" style="background-color:yellow;height:100%;margin:0;padding:0;">
+	<main id="site-content" role="main" style="height:100%;margin:0;padding:0;">
 		
 <!-- 		<?php if (isset($_SESSION)) : ?>
 			<div class="container">
@@ -85,7 +85,6 @@ overflow: none !important;
     frameborder="0" scrolling="no" 
     style="overflow:hidden;height:100%;width:100%" 
     height="100%" width="100%"  
-    onload="resizeIframe(this);"
     >
   </iframe>
     

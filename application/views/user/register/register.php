@@ -1,4 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<style>
+	.help-block{
+		color: #73a5a5;
+		font-style: italic;
+	}
+	</style>
 <div class="container container-login">
 	<div class="row">
 		<?php if (validation_errors()) : ?>

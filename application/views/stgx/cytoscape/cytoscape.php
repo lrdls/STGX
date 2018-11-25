@@ -11,16 +11,50 @@
 	<meta name="author" content="">
 
 	<!-- css -->
-	<link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
+<!-- 	<link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet"> -->
+<link href="<?= base_url('assets/bootstrap-3.3.7/css/bootstrap.min.css') ?>" rel="stylesheet">
+<link href="<?= base_url('assets/bootstrap-3.3.7/fonts/font-awesome.min.css') ?>" rel="stylesheet">
+
+
   <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
   
-<!--   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!--   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet"> -->
+
+ <!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
  -->
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  -->
+  <script src="<?= base_url('assets/js/jquery-3.3.1.min.js') ?>"></script> 
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+
+
+
+
+
+
+
+
+
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"> -->
+
+<!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -103,6 +137,9 @@ input[type="search"]:focus {
   font-family: sans-serif ! important;
 }
 
+.btn:focus {
+    background-color: red;
+}
 
 .btn {
 
@@ -200,9 +237,9 @@ position: relative;
 font-size: 0.8em;
 margin: 0;
 padding: 0;
-background-color: yellow;
-border-top: 1px solid #999;
-border-bottom: 1px solid #999;
+/* background-color: yellow; */
+/* border-top: 1px solid #999; */
+/* border-bottom: 1px solid #999; */
 overflow: visible;
 z-index: 2;
 height: var(--height-navbar);
@@ -297,49 +334,64 @@ z-index: 90;
 
 
 
-	<div class="flex-item"><p><button class="btn" style="width:100%;"><i class="fa fa-close"></i></button></p></div>
+<!-- 	<div class="flex-item">
+		<p>
+		
+	<button id="bt_close" class="btn" style="width:100%;" onclick="window.location='<?= base_url('logout') ?>'">
 	
+	<i class="fa fa-close"></i>
 
+</button>
+</p>
+</div>
+ -->
 
-
-<!-- 	<div id="menu" style="padding-right:20px;">
+	<div id="menu" style="width:50px;"  class="flex-item shrink-3">
 		
 		<ul>
 
 			<li>
 
-				<button class="btn"  style="width:100%;"><i class="fa fa-cog"></i></button>
+<!-- 				<button class="btn"  style="width:100%;padding-right:130px;font-family: Arial, Helvetica, sans-serif !important;">
+				<i class="fa fa-television"> &nbsp;My Projects</i></button> -->
+
+<!-- 				<a href="#" class="btn"><span class="glyphicon glyphicon-book"></span>My Projects</a> -->
+
+<button class="btn"  style="width:50px;height:50px;font-family: Arial, Helvetica, sans-serif !important;border-radius: 50%;    text-align: center;
+    text-decoration: none;">
+<span class="fa fa-close"></span></button>
+
 
 				<ul class="sub-menu">
-					<li><a href="">New Project</a></li>
-					<li><a href="">Proj 1</a></li>
-					<li><a href="">Proj 2</a></li>
+					<li><a href="">Help</a></li>
+					<li><a href="">Parametres</a></li>
+					<li><a href="">Logout</a></li>
 				</ul>
 			</li>
 
 		</ul>
 	</div>
+	
 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+<!--   <div class="flex-item"  style="padding-right:20px;"><p><button class="btn" style="width:100%;"><i class="fa fa-question-circle"></i></button></p></div>
+   -->
+ 
+ <!--  <div class="flex-item"><p><button class="btn" style="width:100%;"><i class="fa fa-cog"></i></button></p></div>
  -->
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-  <div class="flex-item"  style="padding-right:20px;"><p><button class="btn" style="width:100%;"><i class="fa fa-question-circle"></i></button></p></div>
-  
- 
-  <div class="flex-item"><p><button class="btn" style="width:100%;"><i class="fa fa-cog"></i></button></p></div>
-
 
 
 
@@ -358,6 +410,17 @@ z-index: 90;
  </div> -->
 
 
+<style>
+.fa-television{
+    font-family: 'FontAwesome';
+}
+
+.fa-television:before {
+    content: "\f26c";
+}
+</style>
+
+
 	<div id="menu" style="padding-right:100px;">
 		
 		<ul>
@@ -369,7 +432,7 @@ z-index: 90;
 
 <!-- 				<a href="#" class="btn"><span class="glyphicon glyphicon-book"></span>My Projects</a> -->
 
-<button class="btn"  style="width:100%;padding-right:130px;font-family: Arial, Helvetica, sans-serif !important;">
+<button class="btn"  style="width:150px;font-family: Arial, Helvetica, sans-serif !important;">
 <span class="fa fa-television"></span>&nbsp; My Projects</button>
 
 
@@ -395,15 +458,13 @@ z-index: 90;
 
 
   <div class="flex-item" style="width: 100%;">
-  <p>
+<!--   <p>
+<button class="btn" style="width:100%;"><i class="fa fa-toggle-right">&nbsp;Play this $Project</i></button>
+  </p> -->
 
+<button class="btn"  style="width:100%;font-family: Arial, Helvetica, sans-serif !important;">
+<span class="fa fa-toggle-right"></span>&nbsp; Play this $Project</button>
 
-<button class="btn" style="width:100%;"><i class="fa fa-toggle-right">
- &nbsp;Play this $Project
-
-</i></button>
-
-  </p>
   </div>
 
 
@@ -414,29 +475,75 @@ z-index: 90;
 
   </p></div>
 
-  <div class="flex-item"><p>
+  <div class="flex-item"  style="padding-right:100px;"><p>
 	  
   <button class="btn" style="width:100%;"><i class="fa fa-file-archive-o"></i></button>
 
 
   </p></div>
+
+
+
   <style>
   .search-box{
-  height:50px;
+  height:49px;
   width:300px;
   margin:0;padding:0;
+background-color: grey;
+    -webkit-box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 27px -8px rgba(0,0,0,0.75);
+    color: white;
   }
+
+
+.search-box > .fa-searchX {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  font-size: 25px;
+  color: white;
+}
+
+/* Bootstrap 3 text input with search icon */
+
+.has-search .form-control-feedback {
+    right: initial;
+    left: 0;
+	color: white;
+	top: 18px;
+
+}
+
+.has-search .form-control {
+    padding-right: 12px;
+	padding-left: 34px;
+	
+}
 
 </style>
 
-  <div class="flex-item  shrink-3"   style="width:300px;margin-left:100px;"><p>
+<!--   <div class="flex-item  shrink-3"   style="width:300px;margin-left:100px;"><p>
 
     <input type="text" class="search-box" 
            placeholder="Search">
 
-  </p></div>
+  </p></div> -->
 
-</div>
+
+  <div class="form-group has-feedback has-search" style="width:300px;">
+<!--     <span class="fa fa-search form-control-feedbackX"></span> -->
+    <input type="text" class="form-control search-box" placeholder="Search">
+  </div>
+
+
+
+
+
+
+
+
+</div> 
 
 
 
@@ -468,3 +575,11 @@ z-index: 90;
 
 
 graph
+
+<script>
+	$('#bt_close').click(function(){
+		console.log('k');
+   // window.location.href='the_link_to_go_to.html';
+   return false;
+})
+</script>

@@ -46,6 +46,7 @@ svn*
 # Codeigniter Files
 #-------------------------
 app
+application/config/database.php
 application/cache*
 #application/config/*
 application/hooks/*
@@ -56,9 +57,14 @@ application/views/errors*
 application/logs/*
 application/third_party/*
 application/system/*
+assets/css/bootstrap*
+assets/js/bootstrap*
 tests/*
 system*
 core*
+bootstrap*
+jquery*
+fonts*
 index.html
 
 IMG/*
