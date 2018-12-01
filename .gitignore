@@ -45,6 +45,10 @@ svn*
 
 # Codeigniter Files
 #-------------------------
+images
+user_guide
+Screenshots
+_stgx_projects
 app
 application/config/database.php
 application/cache*
