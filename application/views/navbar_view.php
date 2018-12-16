@@ -2,6 +2,8 @@
 <?php
 $base_url  =  "http://".$_SERVER['HTTP_HOST'];
 $base_url .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])).'/';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,9 +12,9 @@ $base_url .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])).'/';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>STORYGRAPH</title>
-	<link rel="icon" type="image/png" href="<?php echo $base_url;?>assets/images/favicon.png" />
+<!-- 	<link rel="icon" type="image/png" href="<?php echo $base_url;?>assets/images/favicon.png" />
 	<link rel="icon" href="<?php echo $base_url;?>assets/images/favicon.png" type="image/png">
-	<link rel="icon" href="<?php echo $base_url;?>assets/images/favicon.ico" />
+	<link rel="icon" href="<?php echo $base_url;?>assets/images/favicon.ico" /> -->
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">

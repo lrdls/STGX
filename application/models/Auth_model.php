@@ -41,7 +41,7 @@ class Auth_model extends CI_Model {
                 $this->update_last_login($row->users_id);
             }
         } else {
-            $notif['message'] = 'Username or password incorrect !';
+            $notif['message'] = 'Pseudo or password incorrect !';
             $notif['type'] = 'danger';
         }
 

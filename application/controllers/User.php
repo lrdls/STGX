@@ -13,7 +13,8 @@ class User extends CI_Controller {
 
         }
 
-        $this->load->view('user_view');
+        // $this->load->view('user_view');
+        $this->load->view('stgx/storygraph');
 
     }
 }

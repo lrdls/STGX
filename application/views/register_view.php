@@ -34,25 +34,25 @@
                         <?php echo form_open('Register/registerUser') ?>
 
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                <label for="username">Pseudo</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Pseudo">
                             </div>
-                            <div class="form-group">
+<!--                             <div class="form-group">
                                 <label for="fname">Full Name</label>
                                 <input type="text" class="form-control" name="fname" id="fname" placeholder="Full Name">
-                            </div>
-                            <div class="form-group">
+                            </div> -->
+<!--                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                            </div>
-                            <div class="form-group">
+                            </div> -->
+<!--                             <div class="form-group">
                                 <label for="contact">Contact</label>
                                 <input type="text" class="form-control" name="contact" id="contact" placeholder="Contact Number">
-                            </div>
-                            <div class="form-group">
+                            </div> -->
+<!--                             <div class="form-group">
                                 <label for="nic">NIC</label>
                                 <input type="text" class="form-control" name="nic" id="nic" placeholder="NIC">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password">

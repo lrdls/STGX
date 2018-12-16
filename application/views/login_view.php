@@ -33,8 +33,8 @@
                         <?php echo form_open('Login/loginUser') ?>
 
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                <label for="username">Pseudo</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Pseudo">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>

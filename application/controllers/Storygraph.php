@@ -26,7 +26,7 @@ class Storygraph extends CI_Controller {
         /*
          * Load view
          */
-		$this->load->view('stgx/storygraph');
+		// $this->load->view('stgx/storygraph');
 		
 	}
 	

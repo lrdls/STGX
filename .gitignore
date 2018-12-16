@@ -73,6 +73,8 @@ index.html
 
 IMG/*
 
+__projects*
+
 ## Sublime Text cache files
 *.tmlanguage.cache
 *.tmPreferences.cache

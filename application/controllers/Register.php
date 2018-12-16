@@ -7,11 +7,11 @@ class Register extends CI_Controller {
 
         //validate  the data taken through the register form
         $this->form_validation->set_rules('username','Username','required|is_unique[users.username]');
-        $this->form_validation->set_rules('fname','Full Name','required');
-        $this->form_validation->set_rules('email','Email','required|valid_email');
-        $this->form_validation->set_rules('contact','contact','required');
-        $this->form_validation->set_rules('nic','NIC','required');
-        $this->form_validation->set_rules('password','Password','required');
+/*         $this->form_validation->set_rules('fname','Full Name','required'); */
+/*         $this->form_validation->set_rules('email','Email','required|valid_email'); */
+/*         $this->form_validation->set_rules('contact','contact','required');
+        $this->form_validation->set_rules('nic','NIC','required');*/
+        $this->form_validation->set_rules('password','Password','required'); 
         $this->form_validation->set_rules('cpassword','Confirm Password','required|matches[password]');
 
         if ($this->form_validation->run() == TRUE) {
@@ -25,7 +25,7 @@ class Register extends CI_Controller {
         redirect('Home/Register');
 
     } else {
-
+        $this->load->view('navbar_view');
         $this->load->view('register_view');
 
         }

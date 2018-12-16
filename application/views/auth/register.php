@@ -22,19 +22,19 @@
                             <input type="text" class="form-control" name="first_name" placeholder="First Name" value="<?php echo $this->input->post('first_name');?>">
                         </div>
                     </div>
-                    <div class="form-group">
+<!--                     <div class="form-group">
                         <label for="lastname" class="col-md-3 control-label">Last Name</label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="<?php echo $this->input->post('last_name');?>">
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="form-group">
+<!--                     <div class="form-group">
                         <label for="email" class="col-md-3 control-label">Email</label>
                         <div class="col-md-9">
                             <input type="email" class="form-control" name="email" placeholder="Email Address" value="<?php echo $this->input->post('email');?>">
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label for="password" class="col-md-3 control-label">Password</label>

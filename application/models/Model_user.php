@@ -8,11 +8,12 @@ class Model_user extends CI_Model {
         $data = array(
             //assign data into array elements
             'username' => $this->input->post('username'),
-            'fname' => $this->input->post('fname'),
+/*             'fname' => $this->input->post('fname'),
             'email' =>$this->input->post('email'),
             'contact' => $this->input->post('contact'),
-            'nic' => $this->input->post('nic'),
-            'password' => sha1($this->input->post('password'))
+            'nic' => $this->input->post('nic'), */
+            'password' => sha1($this->input->post('password')),
+            'token' => substr( str_shuffle( str_repeat( 'abcdefghijklmnopqrstuvwxyz0123456789.', 10 ) ), 0, 25 )
 
         );
         //insert data to the database

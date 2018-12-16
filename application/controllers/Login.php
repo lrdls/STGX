@@ -40,6 +40,7 @@ class Login extends CI_Controller {
                     //set session variables
                     $_SESSION['user_logged'] = TRUE;
                     $_SESSION['username'] = $user->username;
+                    $_SESSION['token'] = $user->token;
 
                     //redirect
                     redirect('user/profile','refresh');

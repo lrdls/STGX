@@ -1,3 +1,164 @@
+<?php
+@session_start();
+
+$this->load->helper('fcts');
+
+$user = $_SESSION['username'];
+/* $current_project = "demo";
+$project = $user."_".$current_project; */
+//$current_json= "assets/_storygraph/__projects/".$project."/localstorage_graph.json";
+$arr_project = array();
+$arr_json = array();
+$token = $_SESSION['token'];
+
+
+
+//echo $_SESSION['username'];
+$arr_project_menu = array();
+$path = "assets/_storygraph/__projects";
+$dir = new DirectoryIterator($path);
+foreach ($dir as $fileinfo) {
+	if ($fileinfo->isDir() && !$fileinfo->isDot()) {
+	  $dn = $fileinfo->getFilename();
+	  $e = explode("_",$dn)[0];
+	  //echo $e.'<br>';
+		if($e==$_SESSION['username']){
+		  //echo $dn.'<br>';
+		  array_push($arr_project_menu,$dn);
+		}
+	}
+}
+//print_r($arr_project);
+//exit;
+
+
+
+function getDirContents_json_DES($user, $dir, &$results = array()){
+    $files = scandir($dir);
+  
+    foreach($files as $key => $value){
+  
+        $path = realpath($dir.DIRECTORY_SEPARATOR.$value);
+  /*       echo $value;
+        echo "<br>-----"; */
+        // exit;
+        if($value == 'localstorage_graph.json'){
+          //echo "<br>";
+          $b = basename(dirname($path));
+  /*         echo $b;
+          echo "<br>";
+          echo $value;
+          echo "<br>-----"; */
+  
+          $u = explode("_",$b)[0];
+  
+          $date = date ("Y-m-d H:i:s", filemtime($path));
+          if($user == $u){
+            $results[$date] = $path;
+          }
+        }
+                if(!is_dir($path)) {
+                    //$results[] = $path;
+                } else if($value != "." && $value != "..") {
+                //} else if($value == "localstorage_graph.json") {
+                    getDirContents_json($user, $path, $results);
+                    //$results[] = $path;
+                }
+        //}       
+    }
+  
+    return $results;
+  }
+
+
+
+
+
+
+
+
+  $path = "assets/_storygraph/__projects/";
+  $dir = new DirectoryIterator($path);
+  foreach ($dir as $fileinfo) {
+      if ($fileinfo->isDir() && !$fileinfo->isDot()) {
+        $dn = $fileinfo->getFilename();
+        $e = explode("_",$dn)[0];
+        //echo $e.'<br>';
+          if($e==$_SESSION['username']){
+            //echo $dn.'<br>';
+            array_push($arr_project,$dn);
+          }
+      }
+  }
+
+
+
+sort($arr_project);
+
+/* echo '<br>#################';
+print_r($arr_project);
+echo '#########################<br>'; */
+// exit;
+
+
+
+$arr_last_json = getDirContents_json($_SESSION['username'], 'assets/_storygraph/__projects/');
+
+if(count($arr_last_json)!=0){
+
+      krsort($arr_last_json);
+
+/* 
+      print_r($arr_last_json);
+
+      print_r(count($arr_last_json));
+
+      echo '<br>';
+      echo '<br>--recent json';
+      echo '<br>';
+ */
+
+      $last_json = reset($arr_last_json);
+
+
+      $current_json = $last_json;
+      $current_project = basename(dirname($current_json));
+
+
+
+      // echo $current_json;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +167,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Storygraph</title>
 
-	<link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/images/favicon.png" />
+<!-- 	<link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/images/favicon.png" />
 	<link rel="icon" href="<?php echo base_url() ?>assets/images/favicon.png" type="image/png">
-	<link rel="icon" href="<?php echo base_url() ?>assets/images/favicon.ico" />
+	<link rel="icon" href="<?php echo base_url() ?>assets/images/favicon.ico" /> -->
 
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/custom.css" rel="stylesheet">
@@ -135,8 +296,10 @@ $(document).ready(function(){
 </script>
 
 </head>
+
+
 <body>
-    <nav class="navbar navbar-inverse navbar-static-top" id="topnavbar">
+    <nav class="navbar navbar-inverse navbar-static-top" id="topnavbar" style="display:none;">
 
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -159,13 +322,22 @@ $(document).ready(function(){
                 <a href="#" class="dropdown-toggle btn_topnav myCol" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 My Projects<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                <li role="separator" class="divider"></li>
-                    <li><a href='#'>Create New Project</a></li>
                     <li role="separator" class="divider"></li>
+                    <li><a href='#'>Create New Project</a></li>
+<!--                     <li role="separator" class="divider"></li>
                     <li><a href='#'>P1</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href='#'>P2</a></li>
-
+                    <li><a href='#'>P2</a></li> -->
+                    <?php
+                    foreach ($arr_project_menu as $value) {
+                        $v = explode("_",$value)[1];
+                        echo "<li role='separator' class='divider'></li>";
+                        echo "<li><a href='#'>".$v."</a></li>";
+                        //echo "$value <br>";
+                    }
+                    ?>
+                    <li role="separator" class="divider"></li>
+                    <li><a href='#'>Demo Project</a></li>
                 </ul>
                 </li>
 
@@ -180,7 +352,7 @@ $(document).ready(function(){
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">CONTACT</a></li> -->
 
-                <li><a href="#" class="btn_topnav btn_play myCol">Play this Project</a></li>
+                <!-- <li><a href="#" class="btn_topnav btn_play myCol">Play this Project</a></li> -->
 
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle btn_topnav_profile btn_profile" 
@@ -207,40 +379,18 @@ $(document).ready(function(){
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
-<!-- <div class='container-stgx' style="margin-bottom:0;padding-bottom:0;"> -->
-
-    <!-- temporary message for a successful landing to the home page -->
-<!--     <?php if ($this->session->flashdata('success')) {?>
-        <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <?php  } ?>
-    <?php echo validation_errors('<div class="alert alert-danger alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>','</div>');
-    ?>
-
-    <div class="jumbotron">
-        <h2>Hello <?php echo $_SESSION['username'];?></h2>
-        <p>This is a Registration and Login system done with the use of Codeigniter and Bootstrap.</p>
-        <p><a class="btn btn-primary" href="<?php echo site_url('Login/logoutUser') ?>" role="button">Log out</a></p>
-    </div> -->
-
-<iframe src="<?php echo site_url('Storygraph') ?>" class="iframe-stgx" scrolling="no"  marginwidth="0" paddingwidth="0" frameborder="0"  styleDebug="border:1px solid lightgrey;">
-
-<!-- <?php $this->load->view('Storygraph'); ?> -->
-
-<!-- </div> -->
-
-
-<!--     <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-
- -->
-</body>
-
+    <div style="background-color:blue;color:white;width:100%;display:none;">
+    Storygraph | My Projects| Play Project :
+    <?php 
+             echo explode("_",$current_project)[1];
+        ?>
+        | Size : 2 Mo | n Sequences | n Cases | n Cases | 
+        <span style="position:relative;right:0;">
+        <?php
+        echo $_SESSION['username'];
+        
+        ?>
+        </span>
+    </div>
 
 </html>
