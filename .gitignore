@@ -74,6 +74,7 @@ index.html
 IMG/*
 
 __projects*
+database.php
 
 ## Sublime Text cache files
 *.tmlanguage.cache
